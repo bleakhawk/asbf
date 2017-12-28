@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar color="abf-blue">
+        <ion-title>{{ 'LIST_FAVORITES_TITLE' | translate }}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="clearFavorites($event)">Clear Favorites</button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item-sliding *ngFor="let workshop of favoriteWorkshops | orderbyDate">
+            <button ion-item (click)="openWorkshop(workshop)">
+                <ion-grid class="workshop-row">
+                    <ion-row>
+                        <ion-col class="date-time">
+                            <strong>{{workshop.day}}</strong><br>{{workshop.timeShort}}
+                        </ion-col>
+                        <ion-col col-9 class="workshop-detail">
+                            {{workshop.name}}
+                            <p>{{workshop.artist}} - {{workshop.room}}</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <ion-note item-end>{{workshop.type}}</ion-note>
+            </button>
+            <ion-item-options side="left">
+                <!-- <button ion-button (click)="openWorkshop(workshop)">Details</button> -->
+                <button ion-button color="danger" (click)="removeFavorite(workshop)">Remove</button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-list *ngIf="favoriteWorkshops.length == 0">
+            <ion-item>
+                <ion-label class="tip" text-wrap><b>Tip:</b> You do not have any favorites yet. Add workshops to your favorites from the Workshops screen.
+                </ion-label>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngIf="favoriteWorkshops.length > 0">
+            <ion-item>
+                <ion-label class="tip" text-wrap><b>Tip:</b> Swipe right to remove favorite
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-list>
+</ion-content>

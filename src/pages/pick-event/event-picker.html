@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar color="abf-blue">
+      <ion-title>Pick Your Event
+
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openEvent(event)" *ngFor="let event of events">
+        <!-- <ion-grid class="workshop-row">
+            <ion-row>
+              <ion-col col-9 class="workshop-detail">
+                {{event.name}}
+                <p>{{event.location}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        <ion-note item-end *ngIf="event.monthyear">{{event.monthyear}}</ion-note> -->
+        <ion-avatar item-start>
+            <img *ngIf="event.img" [src]="event.img" />
+          </ion-avatar>
+          <h2>{{event.name}}</h2>
+          <p>{{event.location}}</p>
+          <ion-note item-end *ngIf="event.monthyear">{{event.monthyear}}</ion-note>
+      </button>
+    </ion-list>
+  </ion-content>
+  

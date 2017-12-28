@@ -1,0 +1,20 @@
+<ion-list>
+
+    <ion-item>
+        <ion-label>Thursday</ion-label>
+        <ion-checkbox [(ngModel)]="thursday" ></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Friday</ion-label>
+        <ion-checkbox [(ngModel)]="friday"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Saturday</ion-label>
+        <ion-checkbox [(ngModel)]="saturday"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+        <ion-label>Sunday</ion-label>
+        <ion-checkbox [(ngModel)]="sunday"></ion-checkbox>
+    </ion-item>
+</ion-list>
+<button ion-button full (click)="applyFilters($event)">Apply</button>

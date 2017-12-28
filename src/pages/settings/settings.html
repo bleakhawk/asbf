@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="abf-blue">
+    <ion-title>{{ pageTitle }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="form" *ngIf="settingsReady">
+    <ion-list *ngIf="page == 'main'">
+
+      <ion-item>
+        <ion-label>Themes</ion-label>
+        <ion-select formControlName="option3">
+          <ion-option value="1">Friday - Neon Glow</ion-option>
+          <ion-option value="2">Saturday - Lil Red Dress</ion-option>
+          <ion-option value="3">Sunday - Hawaiian</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <button ion-item [navPush]="subSettings" [navParams]="profileSettings">
+        {{ 'SETTINGS_PROFILE_BUTTON' | translate }}
+      </button>
+    </ion-list>
+
+    <ion-list *ngIf="page == 'profile'">
+      <ion-item>
+        <ion-label>Hotel Name</ion-label>
+        <ion-label text-wrap>Sheraton Atlanta Hotel</ion-label>
+      </ion-item>
+       <ion-item>
+        <ion-label >Address</ion-label>
+        <ion-label text-wrap>165 Courtland St Ne, Atlanta GA 30303</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label >Public Transportation</ion-label>
+        <ion-label text-wrap>Take any MARTA (train) from the Airport to the Peachtree Center station</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label >Parking</ion-label>
+        <ion-label text-wrap>Self-parking with in/out privileges at $20/day. Paid parking available nearby.</ion-label>
+      </ion-item>
+    </ion-list>
+        <ion-list *ngIf="page == 'about'">
+      <ion-item>
+        <ion-label>Developer</ion-label>
+        <ion-label text-wrap>Ashwin Raju</ion-label>
+      </ion-item>
+       <ion-item>
+        <ion-label >App Version</ion-label>
+        <ion-label text-wrap>1.0.0</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label >Contact Me</ion-label>
+        <ion-label text-wrap>bleak.hawk@gmail.com</ion-label>
+      </ion-item>
+    </ion-list>
+  </form>
+
+</ion-content>

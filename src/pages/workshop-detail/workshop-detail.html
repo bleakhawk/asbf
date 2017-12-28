@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar color="abf-blue">
+    <ion-title>{{ workshop.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + workshop.imageUrl + ')'">
+  </div>
+  <button ion-item (click)="addToFavorites(workshop)">
+         <ion-icon name="star" class="star"></ion-icon>
+        <ion-note item-end>Add to Favorites</ion-note>
+      </button>
+
+  <div class="item-detail" padding>
+    <h2 class="detail-blue">{{workshop.name}}</h2>
+    <p><b>Instructor: </b> {{workshop.artist}}</p>
+    <p><b>Dance Style: </b>{{workshop.type}}</p>
+    <p><b>Room: </b>{{workshop.room}}</p>
+    <p><b>Level: </b>{{workshop.level}}</p>
+    <p><b>Day: </b>{{workshop.day}}</p>
+    <p><b>Time: </b>{{workshop.timeShort}}</p>
+    <p><b>Description: </b>{{workshop.desc}}</p>
+    <p><b>Rate workshop: </b></p>
+    <div>
+      <rating [(ngModel)]="rating" class="star-rating" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+        starIconName="star" nullable="false" (ngModelChange)="onRatingChange($event)">
+      </rating>
+    </div>
+  </div>
+</ion-content>

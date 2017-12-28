@@ -1,0 +1,55 @@
+page-tutorial {
+  .toolbar-background {
+    background: transparent;
+    border-color: transparent;
+    background-color: #401164;
+  }
+
+  .skip{
+    color: white;
+  }
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-title {
+    //margin-top: 1.8rem;
+    color: silver;
+  }
+
+  .slide-image {
+    max-height: 40%;
+    max-width: 60%;
+    margin: 36px 0;
+  }
+
+  b {
+    color: white;
+    font-weight: 500;
+  }
+
+  p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+
+    b {
+      color: white;
+    }
+  }
+
+  .background, .background .pane, .background .item, .background .item-complex .item-content {
+    background-color:#401164;
+}
+}
+
+header {
+  /* ... */
+
+  /* Status bar height on iOS 10 */
+  padding-top: 20px;
+
+  /* Status bar height on iOS 11+ */
+  padding-top: constant(safe-area-inset-top);
+}

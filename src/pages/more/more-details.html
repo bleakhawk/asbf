@@ -1,0 +1,181 @@
+<div *ngIf="event">
+  Testing
+</div>
+<ion-header>
+  <ion-navbar color="abf-blue">
+    <ion-title>
+      {{ item.title }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="item.id == 'about'">
+    <ion-card>
+      <img src="{{aboutEventImageUrl}}" />
+    </ion-card>
+    <div *ngIf="event">
+      {{event.about}}
+    </div>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'hotel'">
+    <!-- <ion-img width="100%" max-height="300px" src="{{hotelImageUrl}}"></ion-img> -->
+    <ion-card>
+      <img src="{{hotelImageUrl}}" />
+    </ion-card>
+    <ion-item>
+      <ion-label class="hotel-label">Hotel Name</ion-label>
+      <ion-label text-wrap>{{event.hotelname}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="hotel-label">Address</ion-label>
+      <ion-label text-wrap>
+        {{event.hoteladdress}} {{event.hotelcity}} {{event.hotelstate}} {{event.hotelzip}}
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="event.hotelcheckin">
+      <ion-label class="hotel-label">Check-in</ion-label>
+      <ion-label text-wrap>{{event.hotelcheckin}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="event.hotelphone">
+      <ion-label class="hotel-label">Phone</ion-label>
+      <ion-label text-wrap>{{event.hotelphone}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'transportation'">
+    <ion-item *ngIf="event.transportation">
+      <ion-label>Transportation</ion-label>
+      <ion-label text-wrap>{{event.transportation}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label *ngIf="event.parking">Parking</ion-label>
+      <ion-label text-wrap>{{event.parking}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'theme'">
+    <ion-item *ngIf="event.theme_thu">
+      <ion-label>Thursday</ion-label>
+      <ion-label text-wrap>{{event.theme_thu}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="event.theme_fri">
+      <ion-label>Friday</ion-label>
+      <ion-label text-wrap>{{event.theme_fri}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="event.theme_sat">
+      <ion-label>Saturday</ion-label>
+      <ion-label text-wrap>{{event.theme_sat}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="event.theme_sun">
+      <ion-label>Sunday</ion-label>
+      <ion-label text-wrap>{{event.theme_sun}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'dj'">
+    <ion-item *ngFor="let dj of djs">
+      <ion-label>{{dj.name}} - {{dj.from}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'tips'">
+    <ion-item>
+      <ion-label text-wrap>Get to the workshops early!</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Drink responsibly!</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Keep after parties quiet, if you do not want to get kicked out!</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Bring some snacks to workshops</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>If you aren't staying at the hotel, bring a change of clothes since you will get sweaty!</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'social'">
+    <ion-item>
+      <ion-label text-wrap>Coming soon...</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'contact'">
+    <ion-item>
+      <ion-label text-wrap>Organizer - {{event.organizer}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="event.email">
+      <ion-label text-wrap>{{event.email}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="event.phone">
+      <ion-label text-wrap>{{event.phone}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'about_app'">
+    <ion-item>
+      <ion-label text-wrap><b>Event One - Event Suite</b></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Developed by Ashwin Raju</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>bleak.hawk@gmail.com</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Version 2.0.0</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Contact me for a free event app for your next event</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'feedback'">
+    <feedback-page></feedback-page>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'rate'">
+    <ion-item>
+      <ion-label text-wrap><b>Rate the app on the Apple Store!</b></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Developed by Ashwin Raju</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>bleak.hawk@gmail.com</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Version 1.0.5</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Contact me for a free event app for your next event</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="item.id == 'switch' && multitenant == true;else single_tenant">
+    <ion-list>
+      <button ion-item (click)="openEvent(event)" *ngFor="let event of events">
+        <!-- <ion-grid class="workshop-row">
+            <ion-row>
+              <ion-col col-9 class="workshop-detail">
+                {{event.name}}
+                <p>{{event.location}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        <ion-note item-end *ngIf="event.monthyear">{{event.monthyear}}</ion-note> -->
+        <ion-avatar item-start>
+            <img *ngIf="event.img" [src]="event.img" />
+          </ion-avatar>
+          <h2>{{event.name}}</h2>
+          <p>{{event.location}}</p>
+          <ion-note item-end *ngIf="event.monthyear">{{event.monthyear}}</ion-note>
+      </button>
+    </ion-list>
+    <ng-template #single_tenant>
+      <ion-list>
+        <ion-item>
+          <ion-label text-wrap><b>Rate the app on the Apple Store!</b></ion-label>
+        </ion-item>
+      </ion-list>
+    </ng-template>
+  </ion-list>
+</ion-content>
+<ion-content *ngIf="item.id == 'schedule'">
+  <ion-list>
+    <nga-schedule></nga-schedule>
+  </ion-list>
+</ion-content>

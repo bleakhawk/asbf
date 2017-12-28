@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color="abf-blue">
+    <ion-title>{{ 'SEARCH_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!-- <ion-searchbar (ionInput)="searchArtists($event)" placeholder="{{ searchArtist }}"></ion-searchbar> -->
+  <ion-list>
+    <button ion-item (click)="openArtist(artist)" *ngFor="let artist of artists">
+      <ion-avatar item-start>
+        <img *ngIf="artist.imageUrl" [src]="artist.imageUrl" />
+      </ion-avatar>
+      <h2>{{artist.name}}</h2>
+      <p>{{artist.from}}</p>
+      <ion-note item-end *ngIf="artist.note">{{artist.note}}</ion-note>
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color="abf-blue">
+    <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="displayFilters($event)">Filters</button>
+    </ion-buttons>
+    <ion-buttons start>
+      <button ion-button (click)="clearFilters($event)">Clear Filters</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content #popoverContent>
+  <!-- <ion-searchbar (ionInput)="searchWorkshops($event)" placeholder="{{ 'WORKSHOP_SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar> -->
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let workshop of currentWorkshops | orderbyDate">
+      <button ion-item (click)="openWorkshop(workshop)">
+        <ion-grid class="workshop-row item-text-wrap">
+          <ion-row>
+            <ion-col class="date-time">
+              <strong>{{workshop.day}}</strong><br>{{workshop.timeShort}}
+            </ion-col>
+            <ion-col col-9 class="workshop-detail">
+              {{workshop.name}}
+              <p>{{workshop.artist}} - {{workshop.room}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-note item-end>{{workshop.type}}</ion-note>
+      </button>
+    </ion-item-sliding>
+  </ion-list>
+  <div #popoverText class="text-to-change">
+  </div>
+</ion-content>

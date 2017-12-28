@@ -1,0 +1,14 @@
+<ion-item *ngFor="let s of schedules | orderScheduleByDate">
+  <!-- <ion-label text-wrap><b>{{ s.name }}</b></ion-label> -->
+  <ion-grid class="workshop-row">
+      <ion-row>
+        <ion-col class="date-time">
+          <strong>{{s.day}}</strong><br>{{s.fromtime_short}} <br>{{s.totime_short}}
+        </ion-col>
+        <ion-col col-8 class="workshop-detail">
+          {{s.name}}
+          <p>{{s.desc}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-item>

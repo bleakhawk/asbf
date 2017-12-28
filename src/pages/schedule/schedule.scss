@@ -1,0 +1,27 @@
+nga-schedule {
+    .date-time {
+      border-right: 2px solid orange;
+      font-size: small;
+      max-width: 60px; 
+      padding: 0;
+      color: grey;
+    }
+  
+    .schedule-row{
+  
+        padding: 0;
+  
+    }
+  
+    .schedule-detail{
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+    }
+
+    .main {
+        width: 100%;
+        height: 100%;
+    }
+  }
+  

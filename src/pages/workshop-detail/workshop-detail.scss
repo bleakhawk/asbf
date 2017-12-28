@@ -1,0 +1,36 @@
+page-workshop-detail {
+  .item-profile {
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    height: 250px;
+  }
+
+  .item-detail {
+    width: 100%;
+    background: white;
+    position: absolute;
+  }
+}
+
+.detail-blue {
+  color: #33BEFF;
+}
+
+.star {
+  color: gold;
+}
+
+.star-rating {
+  color: gold;
+  align-self: auto;
+  ion-icon {
+    font-size: 30px;
+  }
+}
+
+.toolbar-background {
+  background: transparent;
+  border-color: transparent;
+  background-color: #401164;
+}

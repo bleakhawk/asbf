@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="abf-blue">
+    <ion-title>{{ workshop.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + workshop.imageUrl + ')'">
+  </div>
+  <div class="item-detail" padding>
+    <h2>{{workshop.name}}</h2>
+    <p><b>Instructor: </b> {{workshop.artist}}</p>
+    <p><b>Dance Style: </b>{{workshop.type}}</p>
+    <p><b>Room: </b>{{workshop.room}}</p>
+    <p><b>Level: </b>{{workshop.level}}</p>
+    <p><b>Day: </b>{{workshop.day}}</p>
+    <p><b>Time: </b>{{workshop.time}}</p>
+    <p><b>Description: </b>{{workshop.desc}}</p>
+    <button ion-button block color="danger" (click)="removeFavorite(workshop)">Remove from my plan</button>
+  </div>
+  <div>
+
+  </div>
+</ion-content>
